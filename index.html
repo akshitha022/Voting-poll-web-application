@@ -1,24 +1,72 @@
-<DOCTYPE! html>
-    <head>
-        <title>Voting Poll </title>
-    </head>
-    
-
-
-<main>
-    <body>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div id="home-content">
-                <h1>PollMe - Get Started!</h1>
-                <h3>Your Voice Matters!</h3>
-                <hr>
-                <a class="btn btn-light btn-lg" href="{% url 'polls:list' %}" role="button">Get Started !</a>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .calculator input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Simple Calculator</h2>
+        <input type="number" id="num1" placeholder="Enter first number"><br>
+        <input type="number" id="num2" placeholder="Enter second number"><br>
+        <button onclick="calculate('+')">Add</button>
+        <button onclick="calculate('-')">Subtract</button>
+        <button onclick="calculate('*')">Multiply</button>
+        <button onclick="calculate('/')">Divide</button>
+        <p id="result">Result: </p>
     </div>
-</div>
-    </body>
-</main>
+
+    <script>
+        function calculate(operation) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            let result = '';
+
+            if (isNaN(num1) || isNaN(num2)) {
+                result = "Please enter valid numbers!";
+            } else {
+                switch (operation) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero!";
+                        break;
+                }
+            }
+
+            document.getElementById('result').textContent = "Result: " + result;
+        }
+    </script>
+</body>
 </html>
