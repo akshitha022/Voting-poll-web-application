@@ -1,0 +1,69 @@
+[9:44 PM, 12/8/2024] .: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .calculator input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+     …
+[9:59 PM, 12/8/2024] .: body {
+    font-family: Arial, sans-serif;
+    background-color: #faf8ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game-container {
+    text-align: center;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-gap: 10px;
+    background-color: #bbada0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tile {
+    width: 80px;
+    height: 80px;
+    background-color: #cdc1b4;
+    color: #776e65;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.tile[data-value="2"] { background-color: #eee4da; }
+.tile[data-value="4"] { background-color: #ede0c8; }
+.tile[data-value="8"] { background-color: #f2b179; color: #f9f6f2; }
+.tile[data-value="16"] { background-color: #f59563; color: #f9f6f2; }
+/* Add more colors for higher values */
